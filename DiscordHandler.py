@@ -163,6 +163,10 @@ class DiscordHandler:
             self._websocket.close()
             # TODO: handle disconnect.
             breakpoint()
+        except KeyboardInterrupt as e:
+            self._logger.print("[Gateway] Closing Gateway on Keyboard Interrupt! " + str(e))
+            # try handle this shit!
+
         self._lastSequence = json.loads(response)['s']
         self._logger.print(json.loads(response), logType=LogType.DEBUG)
         return json.loads(response)
