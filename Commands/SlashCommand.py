@@ -1,5 +1,5 @@
 from abc import abstractmethod
-from Commands import Option
+from disintegration.Commands import Option
 
 
 class SlashCommand:
