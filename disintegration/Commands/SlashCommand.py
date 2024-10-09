@@ -1,5 +1,5 @@
 from abc import abstractmethod
-from Framework.Commands import Option
+from disintegration.Commands import Option
 
 class SlashCommand:
     def __init__(self, name: str, description: str, options: list[Option] = None):

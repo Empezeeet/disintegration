@@ -4,11 +4,11 @@ import requests
 import websocket
 import json
 
-from Framework.PacketFactory import PacketFactory
-from Framework.Logger import Logger, LogType
-from Framework.Bot import Bot
-from Framework.HeartbeatManager import HeartbeatManager
-from Framework.Commands.SlashCommand import SlashCommand
+from disintegration.PacketFactory import PacketFactory
+from disintegration.Logger import Logger, LogType
+from disintegration.Bot import Bot
+from disintegration.HeartbeatManager import HeartbeatManager
+from disintegration.Commands.SlashCommand import SlashCommand
 
 class DiscordHandler:
 
