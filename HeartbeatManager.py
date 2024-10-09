@@ -3,7 +3,7 @@ import threading
 import time
 import websocket
 
-from disintegration.Logger import Logger
+from Logger import Logger
 
 
 class HeartbeatManager:
