@@ -1,4 +1,4 @@
-from Commands import SlashCommand
+from disintegration.Commands import SlashCommand
 
 
 class Bot:
