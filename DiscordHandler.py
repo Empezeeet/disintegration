@@ -4,7 +4,7 @@ import requests
 import websocket
 import json
 
-from disintegration.acketFactory import PacketFactory
+from disintegration.PacketFactory import PacketFactory
 from disintegration.Logger import Logger, LogType
 from disintegration.Bot import Bot
 from disintegration.HeartbeatManager import HeartbeatManager
