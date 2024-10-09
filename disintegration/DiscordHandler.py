@@ -155,17 +155,18 @@ class DiscordHandler:
 
     def receiveResponse(self) -> dict:
         response = None
-        try:
-            response = self._websocket.recv()
-        except websocket.WebSocketConnectionClosedException as e:
-            self._logger.print("[Gateway] Connection closed")
-            self._logger.print(f"An error occurred!\n {e}")
-            self._websocket.close()
-            # TODO: handle disconnect.
-            breakpoint()
-        except KeyboardInterrupt as e:
-            self._logger.print("[Gateway] Closing Gateway on Keyboard Interrupt! " + str(e))
-            # try handle this shit!
+        while True:
+            try:
+                response = self._websocket.recv()
+                break
+            except websocket.WebSocketConnectionClosedException as e:
+                self._logger.print("[Gateway] Connection closed")
+                self._logger.print(f"An error occurred!\n {e}")
+                self._websocket.close()
+                exit()
+            except KeyboardInterrupt as e:
+                self._logger.print("[Gateway] Closing Gateway on Keyboard Interrupt! " + str(e))
+                # try handle this shit!
 
         self._lastSequence = json.loads(response)['s']
         self._logger.print(json.loads(response), logType=LogType.DEBUG)
